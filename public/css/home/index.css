@@ -1,0 +1,55 @@
+.indexWrap .indexContainar .selectContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.indexWrap .indexContainar .selectContainer .selectContent{
+  display: inline-block;
+  width: 80%;
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 2%;
+}
+
+.indexWrap .indexContainar .siteContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.indexWrap .indexContainar .siteContainer .site{
+  width: 45%;
+  height: 150px;
+  margin: 2.5%;
+  color: #000;
+}
+.indexWrap .indexContainar .siteContainer .site .imgWrap{
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+.indexWrap .indexContainar .siteContainer .site .imgWrap img{
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.heading{
+  width: 100%;
+  font-size: 2.4em;
+  text-align: center;
+  margin: 20px 0;
+}
+.lovelive{
+  background-color: #FF4081;
+}
+.sunshine{
+  background-color: #40C4FF;
+}
