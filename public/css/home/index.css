@@ -27,6 +27,14 @@
   margin: 2.5%;
   color: #000;
 }
+@media(min-width: 415px){
+  .indexWrap .indexContainar .siteContainer .site{
+    width: 28%;
+    height: 300px;
+    margin: 2.5%;
+    color: #000;
+  }
+}
 .indexWrap .indexContainar .siteContainer .site .imgWrap{
   position: relative;
   width: 100%;

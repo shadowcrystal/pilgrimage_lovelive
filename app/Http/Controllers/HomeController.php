@@ -13,4 +13,12 @@ class HomeController extends Controller
     {
       return view('home/index');
     }
+
+    /*
+    //site画面
+    */
+    public function site(int $id)
+    {
+      return view('site');
+    }
 }
