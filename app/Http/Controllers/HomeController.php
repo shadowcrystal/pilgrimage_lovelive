@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +12,10 @@ class HomeController extends Controller
     */
     public function home()
     {
-      return view('home/index');
+      $groups = Group::all();
+      return view('home/index',[
+        'groups' => $groups,
+      ]);
     }
 
     /*

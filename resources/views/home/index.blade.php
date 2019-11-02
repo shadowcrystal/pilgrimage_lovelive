@@ -11,6 +11,11 @@
         <div class="heading">
           <h3>シリーズ選択</h3>
         </div>
+        @foreach($groups as $group)
+          <a href="{{ route('group.index',['name' => $group->name]) }}" class="selectContent">
+            <p class="fontEn">{{ $group->name }}</p>
+          </a>
+        @endforeach
         <a href="#" class="selectContent lovelive">
           <p class="fontEn">μ’s</p>
         </a>
