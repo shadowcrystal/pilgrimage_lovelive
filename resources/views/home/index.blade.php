@@ -12,14 +12,14 @@
           <h3>シリーズ選択</h3>
         </div>
         @foreach($groups as $group)
-          <a href="{{ route('group.index',['name' => $group->name]) }}" class="selectContent">
+          <a href="{{ route('group.index',['group_id' => $group->id]) }}" class="selectContent">
             <p class="fontEn">{{ $group->name }}</p>
           </a>
         @endforeach
         <a href="#" class="selectContent lovelive">
           <p class="fontEn">μ’s</p>
         </a>
-        <a href="{{ route('group.index',['name' => 'lovelive_sunshine'])}}" class="selectContent sunshine">
+        <a href="{{ route('group.index',['group_id' => $group->id])}}" class="selectContent sunshine">
           <p class="fontEn">Aqours</p>
         </a>
       </div>
@@ -27,24 +27,14 @@
         <div class="heading">
           <h3>聖地選択</h3>
         </div>
-        <a href="{{ route('home.site',['id' => 1]) }}" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
-        <a href="#" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
-        <a href="#" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
+        @foreach($sites as $site)
+          <a href="{{ route('home.site',['id' => $site->id ])}}" class="site">
+            <div class="imgWrap">
+              <img src="/storage/sites/{{ $site->image }}" alt="sample">
+            </div>
+            <p>{{ $site->name }}</p>
+          </a>
+        @endforeach
       </div>
     </div>
   </section>
