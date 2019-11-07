@@ -9,26 +9,16 @@
     <div class="indexContainar container">
       <div class="siteContainer">
         <div class="heading">
-          <h3>エピソード選択</h3>
+          <h3>{{ $group->name }}</h3>
         </div>
-        <a href="{{ route('group.site',['name' => 'lovelive_sunshine','id' => 1] )}}" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
-        <a href="#" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
-        <a href="#" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
-          </div>
-          <p>びゅうお</p>
-        </a>
+        @foreach($sites as $site)
+          <a href="{{ route('group.site',['name' => $group->id,'id' => $site->id] )}}" class="site">
+            <div class="imgWrap">
+              <img src="/storage/sites/{{ $site->image }}" alt="sample">
+            </div>
+            <p>{{ $site->name }}</p>
+          </a>
+        @endforeach
       </div>
     </div>
   </section>

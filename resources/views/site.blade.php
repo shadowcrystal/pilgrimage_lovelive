@@ -10,9 +10,9 @@
       <div class="siteContainer">
         <a href="#" class="site">
           <div class="imgWrap">
-            <img src="/storage/sites/sample.jpg" alt="sample">
+            <img src="/storage/sites/{{ $site->image }}" alt="sample">
           </div>
-          <p>びゅうお</p>
+          <p>{{ $site->name }}</p>
         </a>
       </div>
     </div>
