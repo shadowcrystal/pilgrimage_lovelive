@@ -12,7 +12,7 @@
           <h3>{{ $group->name }}</h3>
         </div>
         @foreach($sites as $site)
-          <a href="{{ route('group.site',['name' => $group->id,'id' => $site->id] )}}" class="site">
+          <a href="{{ route('home.site',['id' => $site->id] )}}" class="site">
             <div class="imgWrap">
               <img src="/storage/sites/{{ $site->image }}" alt="sample">
             </div>

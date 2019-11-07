@@ -11,12 +11,12 @@
         <div class="heading">
           <h3>{{ $group->name }}</h3>
         </div>
-        @foreach($characters as $character)
-          <a href="{{ route('character.select',['group_id' => $group->id,'character_id' => $character->id] )}}" class="site">
+        @foreach($episodes as $episode)
+          <a href="{{ route('episode.select',['group_id' => $group->id,'episode_id' => $episode->id] )}}" class="site">
             <div class="imgWrap">
-              <img src="/storage/characters/{{ $character->image }}" alt="sample">
+              <img src="/storage/episodes/{{ $episode->image }}" alt="sample">
             </div>
-            <p>{{ $character->name }}</p>
+            <p>{{ $episode->name }}</p>
           </a>
         @endforeach
       </div>
