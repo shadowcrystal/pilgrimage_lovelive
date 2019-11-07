@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use App\Site;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,10 @@ class HomeController extends Controller
     public function home()
     {
       $groups = Group::all();
+      $sites = Site::all();
       return view('home/index',[
         'groups' => $groups,
+        'sites' => $sites,
       ]);
     }
 
@@ -23,6 +26,9 @@ class HomeController extends Controller
     */
     public function site(int $id)
     {
-      return view('site');
+      $site = Site::find($id);
+      return view('site',[
+        'site' => $site,
+      ]);
     }
 }
