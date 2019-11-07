@@ -17,7 +17,7 @@ class CharacterController extends Controller
       $group = Group::find($group_id);
       $characters = Character::where('group_id',$group_id)->get();
 
-      view('character/index',[
+      return view('character/index',[
         'group' => $group,
         'characters' => $characters,
       ]);
@@ -31,7 +31,7 @@ class CharacterController extends Controller
       $group = Group::find($group_id);
       $character = Character::find($character_id);
 
-      view('character/index',[
+      return view('character/select',[
         'group' => $group,
         'character' => $character,
       ]);

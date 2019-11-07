@@ -22,21 +22,15 @@
           <nav class="headerNavigationContainer">
             <ul class="headerNavigation">
               <li class="headerNavIndex">
-                <a href="{{ route('group.index',['name' => 'lovelive']) }}">
-                  <span class="fontEn">GROUP</span>
-                  <span class="fontJa">グループ</span>
+                <a href="{{ route('group.index',['group_id' => 3]) }}">
+                  <span class="fontEn">μ's'</span>
+                  <span class="fontJa">ミューズ</span>
                 </a>
               </li>
               <li class="headerNavNew">
-                <a href="{{ route('episode.index',['name' => 'lovelive','id' => '1']) }}">
-                  <span class="fontEn">EPISODE</span>
-                  <span class="fontJa">エピソード</span>
-                </a>
-              </li>
-              <li class="headerNavMyPage">
-                <a href="{{ route('character.index',['name' => 'lovelive','id' => '1']) }}">
-                  <span class="fontEn">CHARACTER</span>
-                  <span class="fontJa">キャラクター</span>
+                <a href="{{ route('group.index',['group_id' => 4]) }}">
+                  <span class="fontEn">Aqours</span>
+                  <span class="fontJa">アクア</span>
                 </a>
               </li>
             </ul>
