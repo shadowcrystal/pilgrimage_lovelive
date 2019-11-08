@@ -30,7 +30,7 @@
 @endsection
 
 @section('scripts')
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATo4Hvuq1bRSkgpfmigjndkAHoo7rhO4A&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=your_API_KEY&callback=initMap"></script>
   <script>
   function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),{
