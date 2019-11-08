@@ -36,4 +36,5 @@ class EpisodeController extends Controller
         'episode' => $episode,
       ]);
     }
+    
 }
