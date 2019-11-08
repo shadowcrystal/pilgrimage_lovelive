@@ -36,12 +36,5 @@ class CharacterController extends Controller
         'character' => $character,
       ]);
     }
-
-    /*
-    **
-    */
-    public function site(int $group_id,int $character_id)
-    {
-
-    }
+    
 }
