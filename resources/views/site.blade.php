@@ -6,10 +6,9 @@
     #map {
       width: 100%;
       height: 600px;
-      background-color: grey;
+      background-color: skyblue;
     }
   </style>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATo4Hvuq1bRSkgpfmigjndkAHoo7rhO4A&callback=initMap"></script>
 @endsection
 
 @section('content')
@@ -31,6 +30,7 @@
 @endsection
 
 @section('scripts')
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATo4Hvuq1bRSkgpfmigjndkAHoo7rhO4A&callback=initMap"></script>
   <script>
   function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),{
