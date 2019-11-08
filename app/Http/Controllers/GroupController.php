@@ -23,18 +23,4 @@ class GroupController extends Controller
       ]);
     }
 
-    /*
-    **
-    */
-    public function site(int $group_id,int $id)
-    {
-      $group = Group::find($group_id);
-
-      $site = Site::find($id);
-
-      return view('site',[
-        'group' => $group,
-        'site' => $site,
-      ]);
-    }
 }
