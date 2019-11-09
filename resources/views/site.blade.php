@@ -30,7 +30,7 @@
 @endsection
 
 @section('scripts')
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=your_API_KEY&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=myAPIKEY&callback=initMap"></script>
   <script>
   function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),{
@@ -53,12 +53,15 @@
 
     directionsRenderer.setMap(map);
 
-    var start = new google.maps.LatLng(35.103426656263645,138.859914925064818);
+    var start = new google.maps.LatLng({{ $site->latlng1 }},{{ $site->latlng2 }});
     var end = new google.maps.LatLng(35.083846656263645,138.858154925064818);
 
     var request = {
       origin: start,
       destination: end,
+      waypoints: [
+        { location: new google.maps.LatLng(35.18384888,138.8581545) },
+      ],
       travelMode: 'WALKING'
     };
 

@@ -27,6 +27,7 @@ class HomeController extends Controller
     public function site(int $id)
     {
       $site = Site::find($id);
+
       return view('site',[
         'site' => $site,
       ]);
