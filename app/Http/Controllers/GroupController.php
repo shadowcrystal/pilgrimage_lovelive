@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Group;
-use App\Site;
 use App\Character;
+use App\Episode;
+use App\Site;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -16,11 +17,13 @@ class GroupController extends Controller
     {
       $group = Group::find($group_id);
       $characters = Character::where('group_id',$group->id)->get();
+      $episodes = Episode::where('group_id',$group->id)->get();
       $sites = Site::where('group_id',$group->id)->get();
 
       return view('group/index',[
         'group' => $group,
         'characters' => $characters,
+        'episodes' => $episodes,
         'sites' => $sites,
       ]);
     }

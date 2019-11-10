@@ -12,10 +12,11 @@
           <h3>{{ $group->name }}</h3>
         </div>
         @foreach($characters as $character)
-          <a href="{{ route('character.index',['character_id' => $character->id]) }}" class="selectContent sunshine">
+          <a href="{{ route('character.select',['group_id' => $group->id , 'character_id' => $character->id]) }}" class="selectContent sunshine">
             <p class="fontEn">{{ $character->name }}</p>
           </a>
         @endforeach
+        <!-- episodeを入れます -->
         @foreach($sites as $site)
           <a href="{{ route('home.site',['id' => $site->id] )}}" class="site">
             <div class="imgWrap">
