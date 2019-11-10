@@ -31,10 +31,10 @@ class CharacterController extends Controller
       $group = Group::find($group_id);
       $character = Character::find($character_id);
 
-      return view('character/select',[
+      return view('character/index',[
         'group' => $group,
         'character' => $character,
       ]);
     }
-    
+
 }
