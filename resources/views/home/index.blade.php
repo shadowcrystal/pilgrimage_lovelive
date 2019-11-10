@@ -30,7 +30,7 @@
         @foreach($sites as $site)
           <a href="{{ route('home.site',['id' => $site->id ])}}" class="site">
             <div class="imgWrap">
-              <img src="/storage/sites/{{ $site->image }}" alt="sample">
+              <img src="/storage/sites/{{ $site->episode_id }}/{{ $site->anime_image }}" alt="{{ $site->name }}">
             </div>
             <p>{{ $site->name }}</p>
           </a>
