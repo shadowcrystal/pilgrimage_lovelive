@@ -12,10 +12,10 @@ class EpisodesTableSeeder extends Seeder
      */
     public function run()
     {
-        $group = DB::table('groups')->first();
+        $group = DB::table('groups')->where('name',"Aqours")->first();
 
         DB::table('episodes')->insert([
-          'name' => "未熟DREAMER",
+          'name' => "輝きたい!!",
           'group_id' => $group->id,
           'created_at' => Carbon::now(),
           'updated_at' => Carbon::now(),

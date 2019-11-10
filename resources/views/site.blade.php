@@ -17,7 +17,7 @@
       <div class="siteContainer">
         <a href="#" class="site">
           <div class="imgWrap">
-            <img src="/storage/sites/{{ $site->image }}" alt="sample">
+            <img src="/storage/sites/{{ $site->episode_id }}/{{ $site->anime_image }}" alt="{{ $site->name }}">
           </div>
           <p>{{ $site->name }}</p>
         </a>
@@ -35,7 +35,7 @@
   function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),{
       zoom: 14,
-      center: new google.maps.LatLng(35.096229656263645,138.85850925064818),
+      center: new google.maps.LatLng({{ $site->latlng1 }},{{ $site->latlng2 }}),
       mapTypeId: "roadmap"
     });
 
