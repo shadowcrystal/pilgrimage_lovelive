@@ -15,12 +15,14 @@
   <section class="indexWrap layoutContainer">
     <div class="indexContainar container">
       <div class="siteContainer">
-        <a href="#" class="site">
-          <div class="imgWrap">
-            <img src="/storage/sites/{{ $site->episode_id }}/{{ $site->anime_image }}" alt="{{ $site->name }}">
-          </div>
-          <p>{{ $site->name }}</p>
-        </a>
+        @foreach($sites as $site)
+          <a href="{{ route('home.site',['id' => $site->id] )}}" class="site">
+            <div class="imgWrap">
+              <img src="/storage/sites/{{ $site->episode_id }}/{{ $site->anime_image }}" alt="{{ $site->name }}">
+            </div>
+            <p>{{ $site->name }}</p>
+          </a>
+        @endforeach
       </div>
     </div>
     <div id="map"></div>
@@ -35,7 +37,7 @@
   function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),{
       zoom: 14,
-      center: new google.maps.LatLng({{ $site->latlng1 }},{{ $site->latlng2 }}),
+      center: new google.maps.LatLng({{ $start1 }},{{ $start2 }}),
       mapTypeId: "roadmap"
     });
 
@@ -45,6 +47,34 @@
       title: "{{ $site->name }}",
       animation: google.maps.Animation.DROP,
       url: "http://maps.google.com/mapfiles/ms/micons/red.png"
+    });
+
+    var directionsService = new google.maps.DirectionsService();
+
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+
+    directionsRenderer.setMap(map);
+
+    var start = new google.maps.LatLng({{ $start1 }},{{ $start2 }});
+    var end = new google.maps.LatLng({{ $last1 }},{{ $last2 }});
+
+    var request = {
+      origin: start,
+      destination: end,
+      waypoints: [
+        @foreach($sites as $site)
+          { location: new google.maps.LatLng({{ $site->latlng1 }},{{ $site->latlng2 }}), },
+        @endforeach
+      ],
+      travelMode: 'WALKING'
+    };
+
+    directionsService.route(request,function(result,status){
+      if(status === 'OK'){
+        directionsRenderer.setDirections(result);
+      }else{
+        alert("取得できませんでした："+ status);
+      }
     });
   }
 

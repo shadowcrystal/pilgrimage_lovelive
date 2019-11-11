@@ -61,5 +61,6 @@ class EpisodeController extends Controller
         'episode' => $episode,
       ]);
     }
+    
 }
 >>>>>>> 447a6e4670997e320f58e52373559da774fb203a

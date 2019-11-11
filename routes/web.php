@@ -33,6 +33,8 @@ Route::get('/pilgrimage/{group_id}/episode/{episode_id}','EpisodeController@sele
 //Route::get('/pilgrimage/{group_id}/episode/{episode_id}/site/{id}','EpisodeController@site')->name('episode.site');
 >>>>>>> 447a6e4670997e320f58e52373559da774fb203a
 
-Route::get('/pilgrimage/{group_id}/character','CharacterController@index')->name('character.index');
+//Route::get('/pilgrimage/{group_id}/character','CharacterController@index')->name('character.index');
 Route::get('/pilgrimage/{group_id}/character/{character_id}','CharacterController@select')->name('character.select');
 //Route::get('/pilgrimage/{group_id}/character/{character_id}/site/{id}','HomeController@site')->name('character.site');
+
+Route::get('/root','RootController@index')->name('root.index');
